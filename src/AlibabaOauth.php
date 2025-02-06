@@ -12,12 +12,12 @@ class AlibabaOauth
     /**
      * @var string
      */
-    private $oauthUrl = 'https://auth.1688.com/oauth/authorize?client_id=%s&site=1688&redirect_uri=%s&state=%s';
+    protected $oauthUrl = 'https://auth.1688.com/oauth/authorize?client_id=%s&site=1688&redirect_uri=%s&state=%s';
 
     /**
      * @var string
      */
-    private $tokenUrl = 'https://gw.open.1688.com/openapi/http/1/system.oauth2/getToken/%s';
+    protected $tokenUrl = 'https://gw.open.1688.com/openapi/http/1/system.oauth2/getToken/%s';
 
     /**
      * 授权
