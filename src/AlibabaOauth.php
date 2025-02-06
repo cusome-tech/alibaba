@@ -70,7 +70,7 @@ class AlibabaOauth
     {
         $params = [
             'grant_type'         => 'authorization_code',
-            'need_refresh_token' => true,
+            'need_refresh_token' => 'true',
             'client_id'          => $appKey,
             'client_secret'      => $appSecret,
             'redirect_uri'       => $redirectUri,
