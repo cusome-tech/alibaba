@@ -44,6 +44,20 @@ class AlibabaOauth
         return $data;
     }
 
+
+    /**
+     * 构造授权跳转链接
+     * @param $appKey
+     * @param $redirectUri
+     * @param string $state
+     * @return string
+     */
+    public function build($appKey,  $redirectUri, string $state = 'cross-1688')
+    {
+        return sprintf($this->oauthUrl, $appKey, urlencode($redirectUri), $state);
+    }
+
+
     /**
      * 获取accessToken
      * @param $appKey
@@ -64,5 +78,27 @@ class AlibabaOauth
         ];
         return Request::post(sprintf($this->tokenUrl, $appKey), $params);
     }
+
+    /**
+     * 刷新accessToken
+     * @param $appKey
+     * @param $appSecret
+     * @param $redirect_uri
+     * @param $code
+     * @return bool|string
+     */
+    public function refreshToken($appKey, $appSecret, $refreshToken)
+    {
+        $params = [
+            'grant_type'         => 'refresh_token',
+            'need_refresh_token' => 'true',
+            'client_id'          => $appKey,
+            'client_secret'      => $appSecret,
+            'refresh_token'      => $refreshToken,
+        ];
+        return Request::post(sprintf($this->tokenUrl, $appKey), $params);
+    }
+
+
 
 }
