@@ -1,0 +1,21 @@
+{
+  "name": "cusome-tech/alibaba",
+  "description": "1688开放平台",
+  "type": "library",
+  "license": "MIT",
+  "autoload": {
+    "psr-4": {
+      "alibabasdk\\": "src/"
+    }
+  },
+  "authors": [
+    {
+      "name": "cusome",
+      "email": "github@cusome.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.1.0",
+    "ext-json": "*"
+  }
+}
